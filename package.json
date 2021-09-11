@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -14,15 +16,24 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@bahmutov/add-typescript-to-cypress": "^2.1.2",
+    "@cypress/react": "^5.10.0",
+    "@cypress/webpack-dev-server": "^1.6.0",
+    "@cypress/webpack-preprocessor": "^5.9.1",
     "@types/react": "17.0.20",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "cypress": "^8.3.1",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "html-webpack-plugin": "^5.3.2",
     "prettier": "^2.4.0",
-    "typescript": "4.4.3"
+    "typescript": "4.4.3",
+    "webpack": "^5.52.1"
   }
 }

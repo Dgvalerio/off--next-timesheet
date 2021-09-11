@@ -1,21 +1,28 @@
 {
   "root": true,
+  "env": {
+    "cypress/globals": true
+  },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb",
     "next/core-web-vitals",
     "prettier",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:chai-friendly/recommended",
+    "plugin:cypress/recommended"
   ],
   "plugins": [
     "prettier",
     "import-helpers",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "cypress",
+    "chai-friendly"
   ],
   "rules": {
     /**
-      React Create App Rutes
-    */
+     * React Create App Rutes
+     * */
     // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
     "default-case": "off",
     // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
@@ -58,8 +65,16 @@
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "warn",
     /**
-      My Rules
-    */
+     * Eslint Plugin Cypress Rules
+     * */
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error",
+    /**
+     * My Rules
+     * */
     "prettier/prettier": [
       "error",
       {
