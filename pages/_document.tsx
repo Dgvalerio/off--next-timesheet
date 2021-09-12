@@ -43,11 +43,11 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="icon" href="%PUBLIC_URL%/fav.png" />
+          <link rel="icon" href="fav.png" />
           <meta name="viewport" content="initial-scale=1, width=device-width" />
           <meta name="theme-color" content="#303030" />
           <meta name="description" content="Next Timesheet" />
-          <link rel="apple-touch-icon" href="%PUBLIC_URL%/fav.png" />
+          <link rel="apple-touch-icon" href="fav.png" />
           <title>Next TimeSheet</title>
           <style>
             {/* eslint-disable-next-line */}
