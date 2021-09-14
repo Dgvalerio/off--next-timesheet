@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
+import Footer from '../components/footer';
 import GlobalStyle from '../styles/global-styles';
 import theme from '../styles/theme';
 
@@ -34,6 +35,7 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => (
       <MaterialThemeProvider theme={theme}>
         <CssBaseline />
         <Component {...pageProps} />
+        <Footer />
         <ToastContainer />
         <GlobalStyle />
       </MaterialThemeProvider>
