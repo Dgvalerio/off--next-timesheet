@@ -41,19 +41,7 @@ class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="pt-br">
-        <Head>
-          <meta charSet="utf-8" />
-          <link rel="icon" href="fav.png" />
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
-          <meta name="theme-color" content="#303030" />
-          <meta name="description" content="Next Timesheet" />
-          <link rel="apple-touch-icon" href="fav.png" />
-          <title>Next TimeSheet</title>
-          <style>
-            {/* eslint-disable-next-line */}
-            @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-          </style>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
