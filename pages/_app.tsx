@@ -2,15 +2,18 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
 import {
   CssBaseline,
   ThemeProvider as MaterialThemeProvider,
 } from '@material-ui/core';
+import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import Footer from '../components/footer';
+import { persistor, store } from '../store';
 import GlobalStyle from '../styles/global-styles';
 import theme from '../styles/theme';
 
@@ -31,15 +34,19 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => (
         @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
       </style>
     </Head>
-    <StyledThemeProvider theme={theme}>
-      <MaterialThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-        <Footer />
-        <ToastContainer />
-        <GlobalStyle />
-      </MaterialThemeProvider>
-    </StyledThemeProvider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <StyledThemeProvider theme={theme}>
+          <MaterialThemeProvider theme={theme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+            <Footer />
+            <ToastContainer />
+            <GlobalStyle />
+          </MaterialThemeProvider>
+        </StyledThemeProvider>{' '}
+      </PersistGate>
+    </Provider>
   </>
 );
 export default MyApp;
