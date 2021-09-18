@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress": "cypress open",
-    "cypress:headless": "cypress run"
+    "test": "cypress open",
+    "test:headless": "cypress run"
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
