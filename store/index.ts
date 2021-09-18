@@ -15,7 +15,7 @@ import profile from './profile/slice';
 import ui from './ui/slice';
 
 const persistConfig = {
-  key: 'toTimesheet',
+  key: 'nextTimesheet',
   storage,
   whitelist: ['profile'],
 };
