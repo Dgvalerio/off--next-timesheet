@@ -13,6 +13,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import Footer from '../components/footer';
+import LoadingWrapper from '../components/loading-wrapper';
 import { persistor, store } from '../store';
 import GlobalStyle from '../styles/global-styles';
 import theme from '../styles/theme';
@@ -39,12 +40,14 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => (
         <StyledThemeProvider theme={theme}>
           <MaterialThemeProvider theme={theme}>
             <CssBaseline />
-            <Component {...pageProps} />
-            <Footer />
+            <LoadingWrapper>
+              <Component {...pageProps} />
+              <Footer />
+            </LoadingWrapper>
             <ToastContainer />
             <GlobalStyle />
           </MaterialThemeProvider>
-        </StyledThemeProvider>{' '}
+        </StyledThemeProvider>
       </PersistGate>
     </Provider>
   </>
